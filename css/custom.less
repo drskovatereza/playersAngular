@@ -1,7 +1,83 @@
+
+@mainBgCl: 			#323741;
+@bodyBg: 			#f2f2f2;
+@borderCl:			#d1d3d4;
+@titleCl:			#bdccd4;
+@tableDarkerBg:		#ecedee;
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 footer {
-    margin: 50px 0;
+    margin: 25px 0;
+}
+
+
+
+// header
+body{
+	background-color: @mainBgCl;
+	font-family: 'Arial';
+	font-size: 130%;
+
+	header {
+		h3 {
+			width: 40%;
+			text-align: right;
+			float: right;
+			color: @titleCl;
+			position: relative;
+			top: -10px;
+		}
+		img {
+			float: left;
+		}
+	}
+
+	.main-container {
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 15px 0;
+
+		.main-row {
+			background-color: @bodyBg;
+			margin: 0;
+			padding: 30px 0;
+
+			#players-table{
+				width: 100%;
+				border: 1px @borderCl solid;
+
+				td,th {
+					padding: 15px;
+					border-right: 1px @borderCl solid;
+				}
+				
+				th {
+					padding: 2px 15px;
+					border-bottom: 1px @borderCl solid;
+					background-color: @tableDarkerBg;
+				}
+
+				td:first-child {
+					background: @bodyBg;
+				}
+				tr:nth-child(even) {
+					background: @tableDarkerBg;
+
+					td:first-child {
+						background: #e6e6e6;
+					}
+				}
+				.t-number,.t-sex,.t-tier {
+					width: 5%;
+				}
+				.t-name, .t-surname, .t-email {
+					width: 28%;
+				}
+			}
+
+		}
+	}
 }

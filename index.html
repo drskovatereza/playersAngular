@@ -1,7 +1,7 @@
 
 <!doctype html>
 
-<html lang="en" ng-app="playersApp">
+<html lang="en" ng-app="playersApp" >
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
         	</div>
         <!-- /.container -->
 
-        <div class="row main-row"  ng-controller="playersCtrl as players">
+        <div class="row main-row" ng-controller="playersCtrl">
 
             <!-- left sidebar -->
             <div class="col-md-2">
@@ -51,19 +51,32 @@
             <div class="col-md-10">
 
 
-
+            	<!--
 				First Name: <input type="text" ng-model="firstName"><br>
 				Last Name: <input type="text" ng-model="lastName"><br>
 				<br>
 				Full Name: {{firstName + " " + lastName}}
 
+				<ul>
+					 <li ng-repeat="todo in todos">
+			      		{{todo.text}} - <em>{{todo.done}}</em>
+			      		{{todo.name}} - <em>{{todo.surname}}</em>
+			   		 </li>
+			    </ul>
+
+			    <ul>
+					 <li ng-repeat="player in players">
+			      		{{player.name}} - <em>{{player.surname}}</em>
+			   		 </li>
+			    </ul>
+				-->
                 <table id="players-table">
 			        <col class="t-number">
 			        <col class="t-name">
 			        <col class="t-surname">
 			        <col class="t-sex">
 			        <col class="t-tier">
-			        <col class="t-eier">
+			        <col class="t-email">
 					
 					<thead>
 						<tr>
@@ -77,13 +90,13 @@
 					</thead>
 
 					<tbody>
-						<tr ng-repeat="player in playersData">
-							<td>{{ player.name }}</td>
-							<td>Light</td>
-							<td>Jedi</td>
-							<td>Greedo</td>
-							<td>South</td>
-							<td>Scumbag</td>
+						<tr ng-repeat="player in players">
+							<td>{{ $index + 1}}</td>
+							<td>{{player.name}}</td>
+							<td>{{player.surname}}</td>
+							<td>{{player.sex}}</td>
+							<td>{{player.tier}}</td>
+							<td><a href="mailto: {{player.email}}">{{player.email}}</a></td>
 						</tr>
 						
 					</tbody>

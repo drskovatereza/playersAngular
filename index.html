@@ -94,8 +94,8 @@
 							<td>{{ $index + 1}}</td>
 							<td>{{player.name}}</td>
 							<td>{{player.surname}}</td>
-							<td>{{player.sex}}</td>
-							<td>{{player.tier}}</td>
+							<td><img ng-src="{{player.sex == 'male' && 'images/icon-male.png' || 'images/icon-female.png'}}"/></td>
+							<td><img ng-src="{{player.tier == 'gold' && 'images/tier_gold.png' || 'images/tier_silver.png'}}"/></td>
 							<td><a href="mailto: {{player.email}}">{{player.email}}</a></td>
 						</tr>
 						

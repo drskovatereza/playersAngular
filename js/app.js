@@ -3,8 +3,8 @@
 
 var app = angular.module('playersApp', []);
 app.controller('playersCtrl', function($scope,$http) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
+    //$scope.firstName = "John";
+    //$scope.lastName = "Doe";
 
     $scope.players = 
 
@@ -36,14 +36,14 @@ app.controller('playersCtrl', function($scope,$http) {
         name: "Raymond",
         surname: "Smith",
         sex: "male",
-        tier: "Silver",
+        tier: "silver",
         email: "Raymond@gmail.com"
       },
       {
         name: "Jan",
         surname: "McRoi",
         sex: "male",
-        tier: "Silver",
+        tier: "silver",
         email: "Raymond@gmail.com"
       },
       {
@@ -69,17 +69,17 @@ app.controller('playersCtrl', function($scope,$http) {
         email: "James@gmail.com"
       },
       {
-        name: "Raymond",
+        name: "Jane",
         surname: "Smith",
-        sex: "male",
-        tier: "Silver",
-        email: "Raymond@gmail.com"
+        sex: "female",
+        tier: "silver",
+        email: "Jane@gmail.com"
       },
       {
         name: "Jan",
         surname: "McRoi",
         sex: "male",
-        tier: "Silver",
+        tier: "silver",
         email: "Raymond@gmail.com"
       }
       

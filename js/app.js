@@ -3,8 +3,10 @@
 
 var app = angular.module('playersApp', []);
 app.controller('playersCtrl', function($scope,$http) {
-    //$scope.firstName = "John";
-    //$scope.lastName = "Doe";
+    
+    $scope.sortType       = 'name'; // set the default sort type
+    $scope.sortReverse    = false;  // set the default sort order
+    $scope.searchPlayers  = '';     // set the default search/filter term
 
     $scope.players = 
 

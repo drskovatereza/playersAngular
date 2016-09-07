@@ -50,26 +50,6 @@
             <!-- right column -->
             <div class="col-md-10">
 
-
-            	<!--
-				First Name: <input type="text" ng-model="firstName"><br>
-				Last Name: <input type="text" ng-model="lastName"><br>
-				<br>
-				Full Name: {{firstName + " " + lastName}}
-
-				<ul>
-					 <li ng-repeat="todo in todos">
-			      		{{todo.text}} - <em>{{todo.done}}</em>
-			      		{{todo.name}} - <em>{{todo.surname}}</em>
-			   		 </li>
-			    </ul>
-
-			    <ul>
-					 <li ng-repeat="player in players">
-			      		{{player.name}} - <em>{{player.surname}}</em>
-			   		 </li>
-			    </ul>
-				-->
                 <table id="players-table">
 			        <col class="t-number">
 			        <col class="t-name">
@@ -81,16 +61,19 @@
 					<thead>
 						<tr>
 							<th></th>
-							<th>First Name</th>
-							<th>Surname</th>
-							<th>Sex</th>
-							<th>Tier</th>
-							<th>Email</th>
+							<th  ng-click="sortType = 'name' ; sortReverse = !sortReverse">
+           						First Name
+						        <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
+						    </th>
+							<th  ng-click="sortType = 'surname' ; sortReverse = !sortReverse">Surname</th>
+							<th  ng-click="sortType = 'sex' ; sortReverse = !sortReverse">Sex</th>
+							<th  ng-click="sortType = 'tier' ; sortReverse = !sortReverse">Tier</th>
+							<th  ng-click="sortType = 'email' ; sortReverse = !sortReverse">Email</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<tr ng-repeat="player in players">
+						<tr ng-repeat="player in players | orderBy:sortType:sortReverse">
 							<td>{{ $index + 1}}</td>
 							<td>{{player.name}}</td>
 							<td>{{player.surname}}</td>

@@ -2,11 +2,14 @@
 
 
 var app = angular.module('playersApp', []);
+
+
 app.controller('playersCtrl', function($scope,$http) {
     
     $scope.sortType       = 'name'; // set the default sort type
     $scope.sortReverse    = false;  // set the default sort order
-    $scope.searchPlayers  = '';     // set the default search/filter term
+
+
 
     $scope.players = 
 
@@ -93,6 +96,41 @@ app.controller('playersCtrl', function($scope,$http) {
           $scope.playersData = res.data;                
     });
     */
+
+    $scope.newPlayer = {};
+    
+    $scope.addPlayer = function() {
+      
+      var newName = $scope.name;
+      var newSurname = $scope.surname;
+      var newSex = $scope.sex;
+      var newTier = $scope.tier;
+      var newEmail = $scope.email;
+      //alert(newName+' '+newSurname+' '+newSex+' '+newTier+' '+newEmail);
+      
+      
+      var newPlayer = {
+        name : newName,
+        surname : newSurname,
+        sex : newSex,
+        tier : newTier,
+        email : newEmail
+      }
+      
+
+     $scope.players.push(newPlayer);
+
+     // reset form
+     document.getElementById("newPlayerForm").reset();
+
+    };
+
+    $scope.submitText= function(){
+      var text1 = $scope.name;
+      var text2 = $scope.surname;
+      alert(text1+' '+text2);
+    };
+ 
 
    
 });

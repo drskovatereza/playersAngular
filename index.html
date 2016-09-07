@@ -43,12 +43,42 @@
             <!-- left sidebar -->
             <div class="col-md-2">
 
-                <button type="button">Add Player</button>
+                <!-- <button type="button">Add Player</button> -->
+
+                <div id="popup">
+
+                	<form name="reviewForm" id="newPlayerForm"  ng-submit="reviewForm.$valid && addPlayer()" >
+	                	<fieldset class="form-group">
+					     	First Name <input type="text" ng-model="name"class="form-control" required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	Surname <input type="text" ng-model="surname"class="form-control"  required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	 Tier <input type="text" ng-model="tier"class="form-control"  required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					     	Sex 
+					     	<select ng-model="sex"class="form-control"  required >
+							  <option value="female">Female</option>
+							  <option value="male">Male</option>
+							</select>
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	 Email <input type="email" ng-model="email" class="form-control" required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					     	<button class="btn btn-primary pull-right" >Add Player</button>
+					     </fieldset>
+					  </form>
+
+                </div>
 
             </div>
 
             <!-- right column -->
             <div class="col-md-10">
+
 
                 <table id="players-table">
 			        <col class="t-number">
@@ -61,10 +91,7 @@
 					<thead>
 						<tr>
 							<th></th>
-							<th  ng-click="sortType = 'name' ; sortReverse = !sortReverse">
-           						First Name
-						        <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span>
-						    </th>
+							<th  ng-click="sortType = 'name' ; sortReverse = !sortReverse">First Name <!-- <span ng-show="sortType == 'name'" class="fa fa-caret-down"></span> --></th>
 							<th  ng-click="sortType = 'surname' ; sortReverse = !sortReverse">Surname</th>
 							<th  ng-click="sortType = 'sex' ; sortReverse = !sortReverse">Sex</th>
 							<th  ng-click="sortType = 'tier' ; sortReverse = !sortReverse">Tier</th>

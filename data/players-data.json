@@ -1,76 +1,76 @@
-{ "players" : [
+[
 
-{
-  name: "Fred",
-  surname: "Redwood",
-  sex: "male",
-  tier: "gold",
-  email: "Fred@gmail.com"
-},
-{
-  name: "Trevod",
-  surname: "Banforth",
-  sex: "male",
-  tier: "gold",
-  email: "Trevor@gmail.com"
-}
-,
-{
-  name: "James",
-  surname: "Jamerson",
-  sex: "male",
-  tier: "gold",
-  email: "James@gmail.com"
-},
-{
-  name: "Raymond",
-  surname: "Smith",
-  sex: "male",
-  tier: "Silver",
-  email: "Raymond@gmail.com"
-},
-{
-  name: "Jan",
-  surname: "McRoi",
-  sex: "male",
-  tier: "Silver",
-  email: "Raymond@gmail.com"
-},
-{
-  name: "Fred",
-  surname: "Redwood",
-  sex: "male",
-  tier: "gold",
-  email: "Fred@gmail.com"
-},
-{
-  name: "Trevod",
-  surname: "Banforth",
-  sex: "male",
-  tier: "gold",
-  email: "Trevor@gmail.com"
-}
-,
-{
-  name: "James",
-  surname: "Jamerson",
-  sex: "male",
-  tier: "gold",
-  email: "James@gmail.com"
-},
-{
-  name: "Raymond",
-  surname: "Smith",
-  sex: "male",
-  tier: "Silver",
-  email: "Raymond@gmail.com"
-},
-{
-  name: "Jan",
-  surname: "McRoi",
-  sex: "male",
-  tier: "Silver",
-  email: "Raymond@gmail.com"
-}
-]
-}
+      {
+        name: "Fred",
+        surname: "Redwood",
+        sex: "male",
+        tier: "gold",
+        email: "Fred@gmail.com"
+      },
+      {
+        name: "Trevod",
+        surname: "Banforth",
+        sex: "male",
+        tier: "gold",
+        email: "Trevor@gmail.com"
+      }
+      ,
+      {
+        name: "James",
+        surname: "Jamerson",
+        sex: "male",
+        tier: "gold",
+        email: "James@gmail.com"
+      },
+      {
+        name: "Raymond",
+        surname: "Smith",
+        sex: "male",
+        tier: "silver",
+        email: "Raymond@gmail.com"
+      },
+      {
+        name: "Jan",
+        surname: "McRoi",
+        sex: "male",
+        tier: "silver",
+        email: "Raymond@gmail.com"
+      },
+      {
+        name: "Fred",
+        surname: "Redwood",
+        sex: "male",
+        tier: "gold",
+        email: "Fred@gmail.com"
+      },
+      {
+        name: "Trevod",
+        surname: "Banforth",
+        sex: "male",
+        tier: "gold",
+        email: "Trevor@gmail.com"
+      }
+      ,
+      {
+        name: "James",
+        surname: "Jamerson",
+        sex: "male",
+        tier: "gold",
+        email: "James@gmail.com"
+      },
+      {
+        name: "Jane",
+        surname: "Smith",
+        sex: "female",
+        tier: "silver",
+        email: "Jane@gmail.com"
+      },
+      {
+        name: "Jan",
+        surname: "McRoi",
+        sex: "male",
+        tier: "silver",
+        email: "Raymond@gmail.com"
+      }
+      
+    ]

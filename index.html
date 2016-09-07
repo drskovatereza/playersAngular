@@ -24,7 +24,41 @@
   <![endif]-->
 </head>
 
-<body>
+<body  ng-controller="playersCtrl">
+	<!-- should should be done with angular function injecting form and not jquery/css -->
+	
+	 <div id="popup"  style="display: none">
+
+                	<form name="reviewForm" id="newPlayerForm"  ng-submit="reviewForm.$valid && addPlayer()">
+                	<label>Add player</label>
+	                	<fieldset class="form-group">
+					     	<input type="text" ng-model="name"class="form-control" placeholder="First Name" required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	<input type="text" ng-model="surname"class="form-control"  placeholder="Surname" required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	<input type="text" ng-model="tier"class="form-control" placeholder="Tier"  required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					     	<select ng-model="sex"class="form-control" placeholder="Sex"  required >
+					     	 <option value="" disabled selected>Sex</option>
+							  <option value="female">Female</option>
+							  <option value="male">Male</option>
+							</select>
+					     </fieldset>
+					     <fieldset class="form-group">
+					    	 <input type="email" ng-model="email" class="form-control" placeholder="your@email.com" required />
+					     </fieldset>
+					     <fieldset class="form-group">
+					     	<button class="btn btn-primary pull-right" >Add Player</button>
+					     </fieldset>
+
+					  </form>
+ 					<hr class="clearfix" />
+                </div>
+
+           
 
     <!-- Page Content -->
     <div class="container main-container">
@@ -38,41 +72,14 @@
         	</div>
         <!-- /.container -->
 
-        <div class="row main-row" ng-controller="playersCtrl">
+        <div class="row main-row">
 
             <!-- left sidebar -->
             <div class="col-md-2">
 
-                <!-- <button type="button">Add Player</button> -->
+            
+            	<button type="button" ng-click="launchForm()">Add Player</button>
 
-                <div id="popup">
-
-                	<form name="reviewForm" id="newPlayerForm"  ng-submit="reviewForm.$valid && addPlayer()" >
-	                	<fieldset class="form-group">
-					     	First Name <input type="text" ng-model="name"class="form-control" required />
-					     </fieldset>
-					     <fieldset class="form-group">
-					    	Surname <input type="text" ng-model="surname"class="form-control"  required />
-					     </fieldset>
-					     <fieldset class="form-group">
-					    	 Tier <input type="text" ng-model="tier"class="form-control"  required />
-					     </fieldset>
-					     <fieldset class="form-group">
-					     	Sex 
-					     	<select ng-model="sex"class="form-control"  required >
-							  <option value="female">Female</option>
-							  <option value="male">Male</option>
-							</select>
-					     </fieldset>
-					     <fieldset class="form-group">
-					    	 Email <input type="email" ng-model="email" class="form-control" required />
-					     </fieldset>
-					     <fieldset class="form-group">
-					     	<button class="btn btn-primary pull-right" >Add Player</button>
-					     </fieldset>
-					  </form>
-
-                </div>
 
             </div>
 
@@ -80,7 +87,7 @@
             <div class="col-md-10">
 
 
-                <table id="players-table">
+                <table id="players-table"  >
 			        <col class="t-number">
 			        <col class="t-name">
 			        <col class="t-surname">
@@ -100,7 +107,7 @@
 					</thead>
 
 					<tbody>
-						<tr ng-repeat="player in players | orderBy:sortType:sortReverse">
+						<tr ng-repeat="player in players | orderBy:sortType:sortReverse" ng-click="rowSelected($index)"   ng-class='{selected: $index==selectedRow}'>
 							<td>{{ $index + 1}}</td>
 							<td>{{player.name}}</td>
 							<td>{{player.surname}}</td>
@@ -135,7 +142,7 @@
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

@@ -4,6 +4,10 @@
 @borderCl:			#d1d3d4;
 @titleCl:			#bdccd4;
 @tableDarkerBg:		#ecedee;
+@selectedRowBg:		#0775CC;
+@highlightedRowBg:	#D9EEFF;
+@white:				#ffffff;
+@windowBg: 			#E6E6E6;
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
@@ -20,6 +24,31 @@ body{
 	background-color: @mainBgCl;
 	font-family: 'Arial';
 	font-size: 130%;
+
+	#popup {
+		position: absolute;
+		width: 300px;
+		height: 150px;
+		top: 50%;
+		left: 50%;
+		margin: -75px 0 0 -150px;
+		z-index: 300;
+		background-color: @windowBg;
+		padding: 20px;
+		min-height: 345px;
+		-webkit-box-shadow: 7px 7px 18px -2px rgba(84,84,84,1);
+		-moz-box-shadow: 7px 7px 18px -2px rgba(84,84,84,1);
+		box-shadow: 7px 7px 18px -2px rgba(84,84,84,1);
+		border-radius: 5px;
+	}
+	hr.clearfix {
+
+		border: none;
+		width: 100%;
+		height: 1px;
+		clear: both;
+	}
+
 
 	header {
 		h3 {
@@ -40,11 +69,14 @@ body{
 		border-radius: 10px;
 		padding: 15px 0;
 
+
+
 		.main-row {
 			background-color: @bodyBg;
 			margin: 0;
 			padding: 30px 0;
 
+			
 			#players-table{
 				width: 100%;
 				border: 1px @borderCl solid;
@@ -57,7 +89,17 @@ body{
 					height: 40px;
 					padding: 0;
 					margin: 0;
+
+					&.selected td, &.selected td a {
+						background-color: @selectedRowBg !important;
+						color: @white;
+					}
+					&:hover td{
+						background-color: @highlightedRowBg;
+						
+					}
 				}
+
 				
 				th {
 					padding: 2px 15px;

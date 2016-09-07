@@ -6,6 +6,7 @@ var app = angular.module('playersApp', []);
 
 app.controller('playersCtrl', function($scope,$http) {
     
+    $scope.formVisible    = false;
     $scope.sortType       = 'name'; // set the default sort type
     $scope.sortReverse    = false;  // set the default sort order
 
@@ -13,6 +14,7 @@ app.controller('playersCtrl', function($scope,$http) {
 
     $scope.players = 
 
+    
     [
 
       {
@@ -89,14 +91,21 @@ app.controller('playersCtrl', function($scope,$http) {
       }
       
     ]
+    
+
+    
 
     /*
-    $http.get('data/players-data.json')
-       .then(function(res){
-          $scope.playersData = res.data;                
+    $scope.players = null;
+    $http.get('players-data.json'}).
+        success(function(data, status, headers, config) {
+            $scope.players=data;
+        }).error(function(data, status, headers, config) { 
+           alert('JSON error');      
     });
     */
 
+    // add a new player
     $scope.newPlayer = {};
     
     $scope.addPlayer = function() {
@@ -122,16 +131,23 @@ app.controller('playersCtrl', function($scope,$http) {
 
      // reset form
      document.getElementById("newPlayerForm").reset();
+     $( "#popup" ).css( "display" , "none" );
 
-    };
+    }
 
-    $scope.submitText= function(){
-      var text1 = $scope.name;
-      var text2 = $scope.surname;
-      alert(text1+' '+text2);
-    };
+    // select player
+    $scope.rowSelected= function(row){
+      $scope.selectedRow = row; 
+    }
  
 
+    //launch form
+    $scope.launchForm= function(){
+    //$scope.msg = 'clicked';
+    $scope.formVisible = true; 
+     $( "#popup" ).css( "display" , "block" );
+     
+    }
    
 });
 
